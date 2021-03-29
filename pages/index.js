@@ -9,7 +9,14 @@ const Home = ({ coachingRequests }) => {
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           {coachingRequests.map((coachingRequest) => (
-            <h1>{coachingRequest.title}</h1>
+            <div value={coachingRequest._id}>
+              <h1>{coachingRequest.title}</h1>
+              <ul>
+                {coachingRequest.comments.map((comment) => (
+                  <li key={comment._id}> {comment.content} </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </div>

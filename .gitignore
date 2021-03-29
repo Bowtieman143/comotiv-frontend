@@ -1,3 +1,6 @@
+# next.js build output
+.next
+
 ############################
 # OS X
 ############################
@@ -119,3 +122,5 @@ build
 
 .next
 next
+/next
+./next

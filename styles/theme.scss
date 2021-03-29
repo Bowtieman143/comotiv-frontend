@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;900&display=swap");
+
+//Your customizations must come before bootstrap import
+
+$enable-shadows: true;
+// $primary: #bed62f;
+$primary: #7fa73f;
+ 
+$danger: #ed3636;
+
+$body-color: #333;
+$body-bg: #ffffff;
+
+$border-color: #dee2e6;
+
+$headings-font-family: "Oswald", sans-serif;
+$font-family-sans-serif: Roboto, "Helvetica Neue", Arial, "Noto Sans",
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  "Noto Color Emoji" !default;
+
+$font-weight-bold: 900 !important;
+$font-weight-normal: 400 !important;
+
+$input-btn-padding-x: 1.25rem !default;
+$input-btn-padding-y: 0.75rem;
+$btn-font-weight: $font-weight-bold;
+
+$badge-font-size: 50%;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1400px,
+);
+
+$badge-font-size: 11px;
+$badge-padding-y: 0.5em;
+$badge-padding-x: 1.2em !important;
+
+$modal-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.5) !important;
+
+$nav-link-padding-x: 0rem !important;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
