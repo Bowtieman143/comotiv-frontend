@@ -1,5 +1,6 @@
 import App from "next/app";
 import Head from "next/head";
+import AuthProvider from "../components/Providers/Auth"
 import "../styles/theme.scss";
 import { createContext } from "react";
 import { getStrapiMedia } from "../lib/media";
@@ -17,7 +18,9 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
       </Head>
       <GlobalContext.Provider value={global}>
-        <Component {...pageProps} />
+        <AuthProvider>
+          <Component {...pageProps} />
+        </AuthProvider>
       </GlobalContext.Provider>
     </>
   );

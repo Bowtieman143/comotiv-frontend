@@ -7,7 +7,7 @@ export const AuthContext = createContext();
 export const AuthContextLogin = createContext();
 export const AuthContextLogout = createContext();
 
-export const useAuth = () => useContext(AuthContext);
+export const userAuth = () => useContext(AuthContext);
 export const useAuthLogin = () => useContext(AuthContextLogin)
 export const useAuthLogout = () => useContext(AuthContextLogout);
 
@@ -59,22 +59,22 @@ function AuthProvider({ children }) {
   useEffect(() => {
     // Check that a new route is OK
     const handleRouteChange = (url) => {
-      if (url !== "/" && JSON.stringify(user) === "{}") {
+      if (url !== "/login" && JSON.stringify(user) === "{}") {
         console.log(url);
         console.log(user);
         console.log(
           "You are NOT on the home page and the user object is EMPTY"
         );
-        router.push("/")
+        router.push("/login")
       }
     };
 
     // Check that initial route is OK
-    if (pathname !== "/" && JSON.stringify(user) === "{}") {
+    if (pathname !== "/login" && JSON.stringify(user) === "{}") {
       console.log(pathname);
       console.log(user);
       console.log("You are NOT on the home page and the user object is EMPTY");
-      router.push("/")
+      router.push("/login")
     }
 
     // Monitor routes
