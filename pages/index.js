@@ -6,27 +6,23 @@ import { fetchAPI } from "../lib/api";
 const Home = ({ coachingRequests }) => {
   return (
     <Layout>
-      <div className="uk-section">
-        <div className="uk-container uk-container-large">
-          {coachingRequests.map((coachingRequest) => (
-            <div value={coachingRequest._id}>
-              <h1>{coachingRequest.title}</h1>
-              <ul>
-                {coachingRequest.comments.map((comment) => (
-                  <li key={comment._id}> {comment.content} </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+      {coachingRequests.map((coachingRequest) => (
+        <div value={coachingRequest._id}>
+          <h1>{coachingRequest.title}</h1>
+          <ul>
+            {coachingRequest.comments.map((comment) => (
+              <li key={comment._id}> {comment.content} </li>
+            ))}
+          </ul>
         </div>
-      </div>
+      ))}
     </Layout>
   );
 };
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [ coachingRequests ] = await Promise.all([
+  const [coachingRequests] = await Promise.all([
     fetchAPI("/coaching-requests"),
   ]);
 
