@@ -11,13 +11,10 @@ const Layout = ({ children }) => (
     </Row>
     <Row>
       <Col md={2} className="bg-dark">
-        <ul>
-          <li><Link href="/">Hello World</Link></li>
-          <li><Link href="/">Hello World</Link></li>
-          <li><Link href="/">Hello World</Link></li>
-        </ul>
+        <p><Link href="/">Home</Link></p>
+        <p><Link href="/create-coaching-request">Create A Coaching Request</Link></p>
       </Col>
-      <Col>{children}</Col>
+      <Col className="p-4">{children}</Col>
     </Row>
   </Container>
 );

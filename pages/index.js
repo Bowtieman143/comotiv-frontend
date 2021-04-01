@@ -11,10 +11,11 @@ const Home = ({ coachingRequests }) => {
       {coachingRequests.map((coachingRequest) => (
         <div value={coachingRequest._id}>
           <h1>{coachingRequest.title}</h1>
+          <p>{coachingRequest.content}</p>
           <ul>
             {coachingRequest.comments.map((comment) => (
               <li key={comment._id}> {comment.content} </li>
-              ))}
+            ))}
           </ul>
         </div>
       ))}
